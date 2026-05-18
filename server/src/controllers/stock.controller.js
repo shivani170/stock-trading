@@ -12,6 +12,15 @@ exports.getQuote = async (req, res) => {
   }
 };
 
+exports.getCandles = async (req, res) => {
+  try {
+    const data = await stockService.getCandles(req.params.symbol);
+    res.json(data);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+};
+
 exports.searchStocks = async (req, res) => {
   try {
     const data = await stockService.searchStocks(req.query.q);
