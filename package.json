@@ -1,0 +1,15 @@
+{
+  "name": "stock-trading",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "server",
+    "stock-tracker"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev --workspace=server\" \"npm run dev --workspace=stock-tracker\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
